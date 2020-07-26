@@ -1,0 +1,372 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Dutch Smart Meter - P1 USB"
+Date ""
+Rev "V0.1a"
+Comp "Roald Nefs"
+Comment1 "(c) Copyright 2020 Roald Nefs <info@roaldnefs.com>"
+Comment2 "License: CC-BY-SA V4.0"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:RJ12 J1
+U 1 1 5F1E657B
+P 8750 3600
+F 0 "J1" H 8807 4167 50  0000 C CNN
+F 1 "RJ12" H 8807 4076 50  0000 C CNN
+F 2 "" V 8750 3625 50  0001 C CNN
+F 3 "~" V 8750 3625 50  0001 C CNN
+	1    8750 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:USB_A J?
+U 1 1 5F1E7463
+P 1450 3400
+F 0 "J?" H 1507 3867 50  0000 C CNN
+F 1 "USB_A" H 1507 3776 50  0000 C CNN
+F 2 "" H 1600 3350 50  0001 C CNN
+F 3 " ~" H 1600 3350 50  0001 C CNN
+	1    1450 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_USB:FT232RL U?
+U 1 1 5F1E822C
+P 5500 3650
+F 0 "U?" H 4900 4650 50  0000 C CNN
+F 1 "FT232RL" H 5000 4550 50  0000 C CNN
+F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 6600 2750 50  0001 C CNN
+F 3 "https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT232R.pdf" H 5500 3650 50  0001 C CNN
+	1    5500 3650
+	1    0    0    -1  
+$EndComp
+Text GLabel 9750 3700 2    50   Input ~ 0
+VCC
+Text GLabel 9750 3400 2    50   Input ~ 0
+RXD
+$Comp
+L Device:R R1
+U 1 1 5F1EBBBA
+P 9550 3550
+F 0 "R1" H 9620 3596 50  0000 L CNN
+F 1 "10k" H 9620 3505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 9480 3550 50  0001 C CNN
+F 3 "~" H 9550 3550 50  0001 C CNN
+	1    9550 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5F1E95E1
+P 9400 3950
+F 0 "#PWR0101" H 9400 3700 50  0001 C CNN
+F 1 "GND" H 9405 3777 50  0000 C CNN
+F 2 "" H 9400 3950 50  0001 C CNN
+F 3 "" H 9400 3950 50  0001 C CNN
+	1    9400 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9150 3600 9400 3600
+Wire Wire Line
+	9400 3600 9400 3950
+Connection ~ 9550 3400
+Wire Wire Line
+	9550 3400 9150 3400
+Connection ~ 9550 3700
+Wire Wire Line
+	9550 3700 9150 3700
+Wire Wire Line
+	9550 3400 9750 3400
+Wire Wire Line
+	9550 3700 9750 3700
+NoConn ~ 9300 3800
+NoConn ~ 9300 3500
+NoConn ~ 9300 3300
+Wire Wire Line
+	9300 3300 9150 3300
+Wire Wire Line
+	9300 3500 9150 3500
+Wire Wire Line
+	9300 3800 9150 3800
+Text Notes 10050 3800 0    50   ~ 0
+Power ground\n
+Text Notes 10050 3700 0    50   ~ 0
+Data line
+Text Notes 10050 3600 0    50   ~ 0
+Not connected
+Text Notes 10050 3500 0    50   ~ 0
+Data ground
+Text Notes 10050 3400 0    50   ~ 0
+Data request
+Text Notes 10050 3300 0    50   ~ 0
+Power supply line
+Text Notes 8450 2950 0    100  ~ 0
+RJ12
+Wire Notes Line
+	8300 2700 8300 4300
+Wire Notes Line
+	8300 4300 10850 4300
+Wire Notes Line
+	10850 4300 10850 2700
+Wire Notes Line
+	10850 2700 8300 2700
+Text Notes 1250 2700 0    100  ~ 0
+USB\n
+Text Notes 4050 2350 0    100  ~ 0
+FT232RL
+$Comp
+L power:GND #PWR0102
+U 1 1 5F1F8A31
+P 1800 4400
+F 0 "#PWR0102" H 1800 4150 50  0001 C CNN
+F 1 "GND" H 1805 4227 50  0000 C CNN
+F 2 "" H 1800 4400 50  0001 C CNN
+F 3 "" H 1800 4400 50  0001 C CNN
+	1    1800 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5F1FA53C
+P 2200 4150
+F 0 "C2" H 2315 4196 50  0000 L CNN
+F 1 "0.1uF" H 2315 4105 50  0000 L CNN
+F 2 "" H 2238 4000 50  0001 C CNN
+F 3 "~" H 2200 4150 50  0001 C CNN
+	1    2200 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5F1FACB0
+P 5700 4900
+F 0 "#PWR0103" H 5700 4650 50  0001 C CNN
+F 1 "GND" H 5705 4727 50  0000 C CNN
+F 2 "" H 5700 4900 50  0001 C CNN
+F 3 "" H 5700 4900 50  0001 C CNN
+	1    5700 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 4350 4600 4350
+Wire Wire Line
+	4600 4350 4600 4800
+Wire Wire Line
+	4600 4800 5300 4800
+Wire Wire Line
+	5700 4800 5700 4900
+Wire Wire Line
+	5700 4650 5700 4800
+Connection ~ 5700 4800
+Wire Wire Line
+	5600 4650 5600 4800
+Connection ~ 5600 4800
+Wire Wire Line
+	5600 4800 5700 4800
+Wire Wire Line
+	5500 4650 5500 4800
+Connection ~ 5500 4800
+Wire Wire Line
+	5500 4800 5600 4800
+Wire Wire Line
+	5300 4650 5300 4800
+Connection ~ 5300 4800
+Wire Wire Line
+	5300 4800 5500 4800
+Text GLabel 4400 3350 0    50   Input ~ 0
+USBDM
+Text GLabel 4400 3250 0    50   Input ~ 0
+USBDP
+Text GLabel 2300 3300 2    50   Input ~ 0
+USBDP
+Text GLabel 2300 3600 2    50   Input ~ 0
+USBDM
+$Comp
+L Device:R R1
+U 1 1 5F1FCB45
+P 2050 3300
+F 0 "R1" V 1843 3300 50  0000 C CNN
+F 1 "22" V 1934 3300 50  0000 C CNN
+F 2 "" V 1980 3300 50  0001 C CNN
+F 3 "~" H 2050 3300 50  0001 C CNN
+	1    2050 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F1FD65D
+P 2050 3600
+F 0 "R2" V 1843 3600 50  0000 C CNN
+F 1 "22" V 1934 3600 50  0000 C CNN
+F 2 "" V 1980 3600 50  0001 C CNN
+F 3 "~" H 2050 3600 50  0001 C CNN
+	1    2050 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2200 3300 2300 3300
+Wire Wire Line
+	2200 3600 2300 3600
+Wire Wire Line
+	1750 3400 1900 3400
+Wire Wire Line
+	1900 3400 1900 3300
+Wire Wire Line
+	1750 3500 1900 3500
+Wire Wire Line
+	1900 3500 1900 3600
+Wire Wire Line
+	4400 3250 4700 3250
+Wire Wire Line
+	4400 3350 4700 3350
+$Comp
+L Device:CP C1
+U 1 1 5F2034A5
+P 1800 4150
+F 0 "C1" H 1918 4196 50  0000 L CNN
+F 1 "10uF" H 1918 4105 50  0000 L CNN
+F 2 "" H 1838 4000 50  0001 C CNN
+F 3 "~" H 1800 4150 50  0001 C CNN
+	1    1800 4150
+	1    0    0    -1  
+$EndComp
+Text GLabel 2300 3900 2    50   Input ~ 0
+VCC
+$Comp
+L power:GND #PWR0104
+U 1 1 5F20700E
+P 2200 4400
+F 0 "#PWR0104" H 2200 4150 50  0001 C CNN
+F 1 "GND" H 2205 4227 50  0000 C CNN
+F 2 "" H 2200 4400 50  0001 C CNN
+F 3 "" H 2200 4400 50  0001 C CNN
+	1    2200 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 4300 1800 4400
+Wire Wire Line
+	2200 4300 2200 4400
+$Comp
+L power:GND #PWR0105
+U 1 1 5F20824F
+P 1450 3950
+F 0 "#PWR0105" H 1450 3700 50  0001 C CNN
+F 1 "GND" H 1455 3777 50  0000 C CNN
+F 2 "" H 1450 3950 50  0001 C CNN
+F 3 "" H 1450 3950 50  0001 C CNN
+	1    1450 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 3800 1450 3850
+Wire Wire Line
+	1350 3800 1350 3850
+Wire Wire Line
+	1350 3850 1450 3850
+Connection ~ 1450 3850
+Wire Wire Line
+	1450 3850 1450 3950
+Wire Wire Line
+	1750 3200 1800 3200
+Wire Wire Line
+	1800 3200 1800 3900
+Wire Wire Line
+	1800 3900 2200 3900
+Wire Wire Line
+	1800 3900 1800 4000
+Connection ~ 1800 3900
+Wire Wire Line
+	2200 3900 2200 4000
+Connection ~ 2200 3900
+Wire Wire Line
+	2200 3900 2300 3900
+Wire Notes Line
+	1050 2450 1050 4750
+Wire Notes Line
+	1050 4750 2750 4750
+Wire Notes Line
+	2750 4750 2750 2450
+Wire Notes Line
+	2750 2450 1050 2450
+Text GLabel 5250 2500 0    50   Input ~ 0
+VCC
+Wire Wire Line
+	5250 2500 5400 2500
+Wire Wire Line
+	5600 2500 5600 2650
+Wire Wire Line
+	5400 2500 5400 2650
+Connection ~ 5400 2500
+Wire Wire Line
+	5400 2500 5600 2500
+Text Notes 5650 2750 0    50   ~ 0
+Connect VCC VCCIO to drive the\nUART Interface and CBUS group pins\n(1…3, 5, 6, 9…14, 22, 23) at +5V level
+Text GLabel 6600 3050 2    50   Input ~ 0
+RXD
+Wire Wire Line
+	6600 3050 6300 3050
+Wire Notes Line
+	3950 2100 3950 5250
+Wire Notes Line
+	3950 5250 7400 5250
+Wire Notes Line
+	7400 5250 7400 2100
+Wire Notes Line
+	7400 2100 3950 2100
+NoConn ~ 4550 2950
+NoConn ~ 4550 3650
+NoConn ~ 4550 3850
+NoConn ~ 4550 4050
+NoConn ~ 6500 4250
+NoConn ~ 6500 4350
+NoConn ~ 6500 4150
+NoConn ~ 6500 4050
+NoConn ~ 6500 3950
+NoConn ~ 6500 3650
+NoConn ~ 6500 3550
+NoConn ~ 6500 3450
+NoConn ~ 6500 3350
+NoConn ~ 6500 3250
+NoConn ~ 6500 3150
+NoConn ~ 6500 2950
+Wire Wire Line
+	6500 2950 6300 2950
+Wire Wire Line
+	6500 3150 6300 3150
+Wire Wire Line
+	6500 3250 6300 3250
+Wire Wire Line
+	6500 3350 6300 3350
+Wire Wire Line
+	6500 3450 6300 3450
+Wire Wire Line
+	6500 3550 6300 3550
+Wire Wire Line
+	6500 3650 6300 3650
+Wire Wire Line
+	6500 3950 6300 3950
+Wire Wire Line
+	6500 4050 6300 4050
+Wire Wire Line
+	6500 4150 6300 4150
+Wire Wire Line
+	6500 4250 6300 4250
+Wire Wire Line
+	6500 4350 6300 4350
+Wire Wire Line
+	4550 2950 4700 2950
+Wire Wire Line
+	4550 3650 4700 3650
+Wire Wire Line
+	4550 3850 4700 3850
+Wire Wire Line
+	4550 4050 4700 4050
+$EndSCHEMATC
